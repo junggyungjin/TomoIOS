@@ -1,16 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Linking, Alert } from 'react-native';
 import { VideoBackgroound } from '@/shared/ui/VideoBackground';
+import { useLoginViewmodel } from '@/features/auth/model/useLogin';
 
 export const LoginPage = () => {
     // TODO: Day 3 & Day 4에 실제 로그인/문의 로직 연결 예정
-    const handleGoogleLogin = () => {
-        console.log('Google Login Button Pressed');
-    };
-
-    const handleEmailInquiry = () => {
-        console.log('Email Inquiry Button Pressed');
-    };
+    const { handleGoogleLogin, handleEmailInquiry } = useLoginViewmodel();
 
     return (
         <View style={styles.container}>
